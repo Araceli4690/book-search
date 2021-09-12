@@ -5,7 +5,7 @@ import SavedBooks from './pages/SavedBooks';
 import Navbar from './components/Navbar';
 //import apolloclient
 import { ApolloProvider } from '@apollo/react-hooks';
-import ApolloClient from 'apollo-bost';
+import ApolloClient from 'apollo-boost';
 
 //set up client
 const client = new ApolloClient({

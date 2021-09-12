@@ -26,7 +26,7 @@ const LoginForm = () => {
     // check if form has everything (as per react-bootstrap docs)
     try {
       const { data } = await loginUser({
-        variables: { ...formState }
+        variables: { ...userFormData }
       });
       Auth.login(data.login.token)
     } catch (e) {

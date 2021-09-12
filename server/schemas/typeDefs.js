@@ -21,7 +21,7 @@ type User {
     savedBooks: [Book]
 }
 
-input savedBooks {
+input savedBook {
     description: String
     title: String
     bookId: String
@@ -32,7 +32,6 @@ input savedBooks {
 
 type Query {
 me: User
-users: [User]
 user(username: String!): User
 }
 
