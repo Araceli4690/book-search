@@ -14,13 +14,22 @@ const { typeDefs, resolvers } = require('./schemas');
 const app = express();
 const PORT = process.env.PORT || 3001;
 //creare new apollo server and pass in schema data
+//async function startServer() {
 const server = new ApolloServer({
   typeDefs,
   resolvers,
   context: authMiddleware
 });
+//await ApolloServer.start();
+
+//await apolloServer
+//await ApolloServer.start();
+
 //integrate our apollo server with express app as middleware
 server.applyMiddleware({ app });
+
+
+//startServer();
 
 
 app.use(express.urlencoded({ extended: true }));
@@ -31,13 +40,14 @@ if (process.env.NODE_ENV === 'production') {
   app.use(express.static(path.join(__dirname, '../client/build')));
 }
 
-app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname, '../client/build/index.html'));
-})
+//app.get('*', (req, res) => {
+// res.sendFile(path.join(__dirname, '../client/build/index.html'));
+//})
 
 //app.use(routes);
 
 db.once('open', () => {
   app.listen(PORT, () =>
     console.log(`🌍 Now listening on localhost:${PORT}`));
+  console.log(`Use Graphql at http://localhost:${PORT}${server.graphqlPath}`);
 });

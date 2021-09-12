@@ -14,8 +14,8 @@ type Book {
 }
 
 type User {
-    _id: ID
-    username: String
+    _id: ID!
+    username: String!
     email: String
     bookCount: Int
     savedBooks: [Book]
@@ -43,7 +43,7 @@ type Mutation {
 },
 type Auth {
     token: ID!
-    user: user
+    user: User
 }
 `
 module.exports = typeDefs;
