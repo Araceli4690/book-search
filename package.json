@@ -22,5 +22,8 @@
     "url": "https://github.com/Araceli4690/book-search/issues"
   },
   "homepage": "https://github.com/Araceli4690/book-search#readme",
-  "description": ""
+  "description": "",
+  "dependencies": {
+    "graphql-tag": "^2.12.5"
+  }
 }
